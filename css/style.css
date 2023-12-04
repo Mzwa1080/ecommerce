@@ -1,13 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Roboto:wght@100;300&display=swap');*,
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Roboto:wght@100;300&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
+*,
 *::after,
 *::before {
     margin: 0;
     padding: 0;
     box-sizing: content-box;
 }
-
-
-
 body {
     background-color: #3C4544;
     font-family: 'Londrina Solid';
@@ -16,19 +15,24 @@ body {
 
 #background_home {
     background-image: url('https://i.postimg.cc/9fLQJ1m7/reinhart-julian-b2hts-Zs-PGPc-unsplash-2.jpg');
-    object-fit: contain;
+    object-fit: cover;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: transparent;
+    aspect-ratio: 1/1;
 }
 #background-about{
     background-image: url('https://i.postimg.cc/hPxh8xGH/lefteris-kallergis-j1-Gi-Plv-SGWI-unsplash-2-2.jpg');
     object-fit: fill;
-    object-position: center;
     background-repeat: no-repeat;
-
+    background-size: cover;
+    background-color: transparent;
+    aspect-ratio: 1/1;
 }
-
+.navBar{
+    box-shadow: .3vw .3vw .3vw .3vw;
+    color: white;
+}
 main {
     height: 800px;
     color: white;
