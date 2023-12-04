@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Roboto:wght@100;300&display=swap');*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+
+
+body {
+    background-color: #3C4544;
+    font-family: 'Londrina Solid';
+    /* font-size: bolder; */
+}
+
+#background_home {
+    background-image: url('https://i.postimg.cc/9fLQJ1m7/reinhart-julian-b2hts-Zs-PGPc-unsplash-2.jpg');
+
+}
+#background-about{
+    background-image: url('https://i.postimg.cc/hPxh8xGH/lefteris-kallergis-j1-Gi-Plv-SGWI-unsplash-2-2.jpg');
+    object-fit: fill;
+    object-position: center;
+}
+
+main {
+    height: 800px;
+    color: white;
+}
+
+/* h5 {
+    color: white;
+} */
+#main-elem {
+    padding-top: 30px;
+}
+.about-text{
+    margin-top: 2em;
+    color: white;
+}
+footer{
+    background-color: #242829;
+    color: white;
+    height: 40px;
+    align-items: center;
+}
