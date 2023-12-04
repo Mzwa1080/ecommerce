@@ -37,6 +37,9 @@ main {
     height: 800px;
     color: white;
 }
+.land{
+    align-items: center;
+}
 
 
 .about-text{

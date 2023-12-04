@@ -19,12 +19,41 @@ function displayProducts() {
 }
 displayProducts()
 
+let emptyList = [];
+
+function displayMultipleProducts() {
+    shoeStore2 = [
+        {
+            id: products.length + 1,
+            img: 'https://i.postimg.cc/zDx4dPyh/image-2.png',
+            brandName: 'Nike',
+            description: 'NIKE AIR FORCE 1 LV8',
+            price: 'R2000',
+        },
+        {
+            id: products.length + 1,
+            img: 'https://i.postimg.cc/zDx4dPyh/image-2.png',
+            brandName: 'Nike',
+            description: 'NIKE AIR FORCE 1 LV8',
+            price: 'R2000',
+        },
+        {
+            id: products.length + 1,
+            img: 'https://i.postimg.cc/zDx4dPyh/image-2.png',
+            brandName: 'Nike',
+            description: 'NIKE AIR FORCE 1 LV8',
+            price: 'R2000',
+        },
+
+    ]
+}
+
 function getProducts() {
     results.innerHTML = " "
     console.log()
     products.forEach(item => {
         console.log(item.brandName)
-    
+
         results.innerHTML +=
             `
         <div class="card mt-5" style="width: 18rem;">
