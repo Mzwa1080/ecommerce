@@ -16,12 +16,17 @@ body {
 
 #background_home {
     background-image: url('https://i.postimg.cc/9fLQJ1m7/reinhart-julian-b2hts-Zs-PGPc-unsplash-2.jpg');
-
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
 }
 #background-about{
     background-image: url('https://i.postimg.cc/hPxh8xGH/lefteris-kallergis-j1-Gi-Plv-SGWI-unsplash-2-2.jpg');
     object-fit: fill;
     object-position: center;
+    background-repeat: no-repeat;
+
 }
 
 main {
@@ -29,12 +34,7 @@ main {
     color: white;
 }
 
-/* h5 {
-    color: white;
-} */
-#main-elem {
-    padding-top: 30px;
-}
+
 .about-text{
     margin-top: 2em;
     color: white;
@@ -45,3 +45,5 @@ footer{
     height: 40px;
     align-items: center;
 }
+
+
