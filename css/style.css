@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Roboto:wght@100;300&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
+
 *,
 *::after,
 *::before {
@@ -7,10 +8,12 @@
     padding: 0;
     box-sizing: content-box;
 }
+
 body {
     background-color: #3C4544;
     font-family: 'Londrina Solid';
     /* font-size: bolder; */
+    grid-template-columns: ;
 }
 
 #background_home {
@@ -21,7 +24,8 @@ body {
     background-color: transparent;
     aspect-ratio: 1/1;
 }
-#background-about{
+
+#background-about {
     background-image: url('https://i.postimg.cc/hPxh8xGH/lefteris-kallergis-j1-Gi-Plv-SGWI-unsplash-2-2.jpg');
     object-fit: fill;
     background-repeat: no-repeat;
@@ -29,28 +33,43 @@ body {
     background-color: transparent;
     aspect-ratio: 1/1;
 }
-.navBar{
+
+.navBar {
     box-shadow: .3vw .3vw .3vw .3vw;
     color: white;
 }
+
 main {
-    height: 800px;
+    /* height: 800px; */
     color: white;
 }
-.land{
+
+.land {
     align-items: center;
 }
 
 
-.about-text{
+.about-text {
     margin-top: 2em;
     color: white;
 }
-footer{
+
+.displayProducts {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    /* display: flex; */
+}
+
+.products-btn {
+    background-color: #636C6B;
+    width: 100px;
+    margin-block: center;
+}
+
+footer {
     background-color: #242829;
     color: white;
     height: 40px;
     align-items: center;
 }
-
-
