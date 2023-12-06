@@ -1,6 +1,6 @@
 let products = [];
 let results = document.querySelector('.displayProducts')
-
+let sortBtn = document.querySelector('[sort-products]')
 
 let shoeStore = [{
     id: 1,
@@ -11,16 +11,16 @@ let shoeStore = [{
 },
 {
     id: 2,
-    img: 'https://i.postimg.cc/NfLSZ7Xz/image-1.png',
-    brandName: 'nike',
-    description: 'NIKE AIR FORCE 1 NEXT NATURE',
+    img: 'https://i.postimg.cc/jjp7FYSy/Screenshot-2023-12-06-092205.pngg',
+    brandName: 'adidas',
+    description: 'ROADRUNNER  ',
     price: '3000',
 },
 {
     id: 3,
-    img: 'https://i.postimg.cc/prc7pywC/image-3.png',
-    brandName: 'nike',
-    description: 'AIR  JORDAN 1 LOW',
+    img: 'https://i.postimg.cc/sg0S5hF6/Screenshot-2023-12-06-092049.png',
+    brandName: 'Yeezy',
+    description: 'WALK IN THE OCEAN',
     price: '1800',
 },
 {
@@ -32,42 +32,67 @@ let shoeStore = [{
 },
 {
     id: 5,
-    img: 'https://i.postimg.cc/prc7pywC/image-3.png',
-    brandName: 'nike',
-    description: 'AIR  JORDAN 1 LOW',
+    img: 'https://i.postimg.cc/JzhZyQFH/Screenshot-2023-12-06-092228.png',
+    brandName: 'lacoste',
+    description: 'L-GUARD BREAKER CT TEXTILE',
     price: '1800',
 }
 
 ]
-
-function displayAddedProducts(products) {
+products = [...shoeStore]
+function displayAddedProducts(value) {
     // I can loop through shoe store and push to products.
-    // products.forEach() 
     // From the lessons, spread operator also does the same, what if I assingn the spread to products?
-    
-    products = [...shoeStore]
-    // console.log(products);
-    if (products) {
-        localStorage.setItem('Products', JSON.stringify(products))
-        products.forEach(ii => {
-            // console.log(ii.brandName);
+    results.innerHTML = "";
+    if (value) {
+        // forEach(item, i)   - - - the i-> will come in handy for deleting or updating the value
+        value.forEach((eachItem) => {
             results.innerHTML +=
                 `
-            <div class="card mt-5 mb-4" style="width: 18rem;">
-            <img src="${ii.img}" class="card-img-top" alt="...">
-            <div class="card-body mt-3">
-           <h5 class="card-title text-center">${ii.brandName}</h5>
-           <p class="card-text text-center">${ii.description}</p>
-           <a href="#" class="btn products-btn mt-3 text-center ">ADD TO CART</a>
-            </div>
-           </div>
+            <div class="card text-center" style="width: 18rem;">
+                <img src="${eachItem.img}" class=" text-center card-img-top" alt="...">
+                    <div class="card-body">
+                        
+                        <div class="card-header align-items-center mt-4">${eachItem.brandName.toUpperCase()}</div>
+
+                        <p class="card-text">${eachItem.description}</p>
+                        <div class="card-header align-items-center mb-4">R${eachItem.price}</div>
+
+                        <a href="#" class="btn btn-primary align-items-center">Add To Cart</a>
+                    </div>
+                </div>
             `
-
-        })
+        });
     }
-
 }
-displayAddedProducts(products )
+displayAddedProducts(products)
 
-// I think I should have a get function, that gets the data from the arr and then that get function I will use it to 
-// I will use it to display inside the one that add items
+let search = document.getElementById('searchInput')
+function sortItemsByPrice() {
+    let items = products.sort((i, ii) => {
+        return ii.price - i.price
+    })
+    displayAddedProducts(items)
+}
+
+function searchItemByName() {
+    let inputSearchValue = search.value;
+    if (inputSearchValue) {
+        let filterByName = products.filter((iitem) => {
+            return iitem.brandName.toLowerCase().includes(inputSearchValue.toLowerCase())
+        })
+        displayAddedProducts(filterByName)
+    } if(inputSearchValue == ''){
+        results.innerHTML = ''
+        displayAddedProducts(products)
+    }
+    if(!inputSearchValue){
+        console.log('This item is not found');
+    }
+}
+
+
+search.addEventListener('keyup', searchItemByName)
+
+sortBtn.addEventListener('click', sortItemsByPrice)
+
