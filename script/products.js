@@ -49,7 +49,7 @@ function displayAddedProducts(value) {
         value.forEach((eachItem) => {
             results.innerHTML +=
                 `
-            <div class="card text-center" style="width: 18rem;">
+            <div class="card text-center mt-3" style="width: 18rem;">
                 <img src="${eachItem.img}" class=" text-center card-img-top" alt="...">
                     <div class="card-body">
                         
@@ -57,8 +57,9 @@ function displayAddedProducts(value) {
 
                         <p class="card-text">${eachItem.description}</p>
                         <div class="card-header align-items-center mb-4">R${eachItem.price}</div>
+                        <button class="btn btn-primary" onclick='addItemToCart(${JSON.stringify(eachItem)})'>Add to Cart</button>
 
-                        <a href="#" class="btn btn-primary align-items-center">Add To Cart</a>
+
                     </div>
                 </div>
             `
@@ -66,7 +67,6 @@ function displayAddedProducts(value) {
     }
 }
 displayAddedProducts(products)
-
 let search = document.getElementById('searchInput')
 function sortItemsByPrice() {
     let items = products.sort((i, ii) => {
@@ -82,17 +82,39 @@ function searchItemByName() {
             return iitem.brandName.toLowerCase().includes(inputSearchValue.toLowerCase())
         })
         displayAddedProducts(filterByName)
-    } if(inputSearchValue == ''){
+        if (filterByName.length > 0) {
+            displayAddedProducts(filterByName)
+        }
+        else {
+            results.innerHTML = ''
+            results.innerHTML =
+                `
+            <h2 class="text-center">${inputSearchValue}  is not found! </h2>
+            `
+        }
+    } else {
         results.innerHTML = ''
         displayAddedProducts(products)
     }
-    if(!inputSearchValue){
-        console.log('This item is not found');
-    }
+
 }
 
 
+
+
+
+
+
 search.addEventListener('keyup', searchItemByName)
-
 sortBtn.addEventListener('click', sortItemsByPrice)
+let checkoutProduct = [];
 
+let addToCart = []
+function addItemToCart(item) {
+    if (item) {
+        // push item into an array
+        addToCart.push(item)
+        // Save array on your localstorage
+        localStorage.setItem('addToCart', JSON.stringify(addToCart))
+    }
+}
