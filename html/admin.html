@@ -27,7 +27,7 @@
                 <div class="navbar-nav">
                     <a class="nav-link" href="../index.html">Home</a>
                     <a class="nav-link" href="./about.html">About</a>
-                    <a class="nav-link" href="./products.html" added-products>Products</a>
+                    <a class="nav-link" href="./products.html" >Products</a>
                     <a class="nav-link" href="./admin.html">Admin</a>
                     <a class="nav-link" href="./checkout.html">Checkout</a>
                     <a class="nav-link" href="./contact.html">Contact</a>
@@ -45,9 +45,15 @@
                 <h1>Admin</h1>
             </div>
 
-            <div class="row">
+            <div class="row d-flex justify-content-between">
+
+                <button class="btn btn-light col-2" type="sort" value="sort" sort-admins>Sort</button>
+
+
+
+
                 <!-- Button trigger modal -->
-                <button type="button" class="btn bg-white col-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="btn bg-white col-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Add Items
                 </button>
 
@@ -75,7 +81,7 @@
                                 </div>
                                 <div class="mb-3 col-11">
                                     <label for="exampleInputEmail1" class="form-label">Price</label>
-                                    <input type="text" class="form-control product-price" id="exampleInputEmail1"
+                                    <input type="number" class="form-control product-price" id="exampleInputEmail1"
                                         brand-price aria-describedby="emailHelp">
                                 </div>
                                 <div class="mb-3 col-11">

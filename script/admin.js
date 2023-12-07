@@ -1,5 +1,6 @@
 let displayAminProducts = document.querySelector('[admin-data-output]')
 let getStoredProducts = JSON.parse(localStorage.getItem('Products'))
+let sortBtn = document.querySelector('[sort-admins]')
 
 function displayProducts(value) {
     // I can loop through shoe store and push to products.
@@ -54,6 +55,17 @@ function getValuesFromInputAndPushToStorage(){
 
 
 }
+
+
+function sortItemsByPrice() {
+    let items = getStoredProducts.sort((item1, item2) => {
+        return item1.price - item2.price
+    })
+    displayProducts(items)
+}
+
+
+sortBtn.addEventListener('click', sortItemsByPrice)
 
 
 document.querySelector('[save-btn]').addEventListener('click',getValuesFromInputAndPushToStorage) // call the function that will add this previous image to the list in the local stogar

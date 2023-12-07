@@ -1,7 +1,7 @@
 
 let checkedOutItems = JSON.parse(localStorage.getItem('addToCart') || '[]');
 let displayItemsInTable = document.querySelector('.checkout-display');
-
+let totalAmountDisplay = document.querySelector('#totalAmount')
 let groupedItemsInTheCheckoutStorage = Object.groupBy(checkedOutItems, itemId => {
     // console.log(itemId.id); //This got the id of a specific added to checkout/cart item. and it got it 8x
     // console.log(itemId);
@@ -11,7 +11,7 @@ function displayCheckoutInStorage() {
 
     displayItemsInTable.innerHTML = '';
     // console.log('this is the length of the checkout - ' + checkedOutItems.length);
-    // let sumOfAllItems = ;
+    let totalAmount = [];
 
 
     for (let keyId in groupedItemsInTheCheckoutStorage) {
@@ -26,10 +26,13 @@ function displayCheckoutInStorage() {
             totalPrice += item.price * item.quantity;
             itemQuantity += item.quantity;
 
-            console.log(item.price);
+            // console.log(item.price);
         });
-
-   
+        totalAmount.push(totalPrice)
+        // console.log(totalAmount);
+        let sum = totalAmount.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+        // console.log(sum.);
+        // let finalAmountInTheArr = sum[sum.length -1]
 
         // console.log(groupedItemsInTheCheckoutStorage[keyId][0]);
         displayItemsInTable.innerHTML +=
@@ -39,14 +42,19 @@ function displayCheckoutInStorage() {
             <td>${groupedItemsInTheCheckoutStorage[keyId][0].description.toUpperCase()}</td>
             <td>R${groupedItemsInTheCheckoutStorage[keyId][0].price}</td>
             <td>${itemQuantity}</td> 
-            <td>R${totalPrice}</td>
-  
+            <td>${totalPrice}</td> 
 
-           
+            
 
         </tr>
+        
 
 
+        `
+
+        totalAmountDisplay.innerHTML +=
+        `
+        <td>R${sum}</td>
         `
     }
 
