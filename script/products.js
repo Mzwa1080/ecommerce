@@ -8,6 +8,7 @@ let shoeStore = [{
     brandName: 'nike',
     description: 'NIKE AIR FORCE 1 LV8',
     price: '2000',
+    quantity:1
 },
 {
     id: 2,
@@ -15,6 +16,7 @@ let shoeStore = [{
     brandName: 'adidas',
     description: 'ROADRUNNER  ',
     price: '3000',
+    quantity:1
 },
 {
     id: 3,
@@ -22,6 +24,7 @@ let shoeStore = [{
     brandName: 'Yeezy',
     description: 'WALK IN THE OCEAN',
     price: '1800',
+    quantity:1
 },
 {
     id: 4,
@@ -29,6 +32,7 @@ let shoeStore = [{
     brandName: 'nike',
     description: 'NIKE  AIR FORCE 1 ‘07 WB',
     price: '2400',
+    quantity:1
 },
 {
     id: 5,
@@ -36,6 +40,8 @@ let shoeStore = [{
     brandName: 'lacoste',
     description: 'L-GUARD BREAKER CT TEXTILE',
     price: '1800',
+    quantity:1
+
 }
 
 ]
@@ -43,6 +49,7 @@ products = [...shoeStore]
 function displayAddedProducts(value) {
     // I can loop through shoe store and push to products.
     // From the lessons, spread operator also does the same, what if I assingn the spread to products?
+   localStorage.setItem('Products',JSON.stringify(products) ) || []
     results.innerHTML = "";
     if (value) {
         // forEach(item, i)   - - - the i-> will come in handy for deleting or updating the value
@@ -67,6 +74,7 @@ function displayAddedProducts(value) {
     }
 }
 displayAddedProducts(products)
+
 let search = document.getElementById('searchInput')
 function sortItemsByPrice() {
     let items = products.sort((i, ii) => {
@@ -101,14 +109,6 @@ function searchItemByName() {
 
 
 
-
-
-
-
-search.addEventListener('keyup', searchItemByName)
-sortBtn.addEventListener('click', sortItemsByPrice)
-let checkoutProduct = [];
-
 let addToCart = []
 function addItemToCart(item) {
     if (item) {
@@ -118,3 +118,9 @@ function addItemToCart(item) {
         localStorage.setItem('addToCart', JSON.stringify(addToCart))
     }
 }
+
+
+
+
+search.addEventListener('keyup', searchItemByName)
+sortBtn.addEventListener('click', sortItemsByPrice)
