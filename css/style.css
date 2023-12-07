@@ -54,7 +54,7 @@ main {
     color: white;
 }
 
-.displayProducts {
+.displayProducts, .admin-products-display {
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-gap: 10px;

@@ -50,6 +50,11 @@ function displayAddedProducts(value) {
     // I can loop through shoe store and push to products.
     // From the lessons, spread operator also does the same, what if I assingn the spread to products?
    localStorage.setItem('Products',JSON.stringify(products) ) || []
+   
+   let test = JSON.parse(localStorage.getItem('Products'))
+
+
+   console.log(test);
     results.innerHTML = "";
     if (value) {
         // forEach(item, i)   - - - the i-> will come in handy for deleting or updating the value
@@ -71,6 +76,8 @@ function displayAddedProducts(value) {
                 </div>
             `
         });
+    }else{
+        JSON.parse(localStorage.getItem('Products'))
     }
 }
 displayAddedProducts(products)
