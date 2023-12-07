@@ -11,6 +11,7 @@ function displayCheckoutInStorage() {
 
     displayItemsInTable.innerHTML = '';
     // console.log('this is the length of the checkout - ' + checkedOutItems.length);
+    // let sumOfAllItems = ;
 
 
     for (let keyId in groupedItemsInTheCheckoutStorage) {
@@ -18,7 +19,6 @@ function displayCheckoutInStorage() {
 
         let totalPrice = 0;
         let itemQuantity = 0;
-        let sumOfAllItems = 0;
 
     // to get prices and quantity, i need to loop through groupedItems each item and then add together, update to price and quantity
         groupedItemsInTheCheckoutStorage[keyId].forEach(item => {
@@ -40,7 +40,7 @@ function displayCheckoutInStorage() {
             <td>R${groupedItemsInTheCheckoutStorage[keyId][0].price}</td>
             <td>${itemQuantity}</td> 
             <td>R${totalPrice}</td>
-            
+  
 
            
 
