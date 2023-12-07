@@ -7,7 +7,7 @@ let shoeStore = [{
     img: 'https://i.postimg.cc/zDx4dPyh/image-2.png',
     brandName: 'nike',
     description: 'NIKE AIR FORCE 1 LV8',
-    price: '2000',
+    price: 2000,
     quantity:1
 },
 {
@@ -15,7 +15,7 @@ let shoeStore = [{
     img: 'https://i.postimg.cc/jjp7FYSy/Screenshot-2023-12-06-092205.pngg',
     brandName: 'adidas',
     description: 'ROADRUNNER  ',
-    price: '3000',
+    price: 3000,
     quantity:1
 },
 {
@@ -23,7 +23,7 @@ let shoeStore = [{
     img: 'https://i.postimg.cc/sg0S5hF6/Screenshot-2023-12-06-092049.png',
     brandName: 'Yeezy',
     description: 'WALK IN THE OCEAN',
-    price: '1800',
+    price: 1800,
     quantity:1
 },
 {
@@ -31,7 +31,7 @@ let shoeStore = [{
     img: 'https://i.postimg.cc/D0Q1TJwy/image-8.png',
     brandName: 'nike',
     description: 'NIKE  AIR FORCE 1 ‘07 WB',
-    price: '2400',
+    price: 2400,
     quantity:1
 },
 {
@@ -39,7 +39,7 @@ let shoeStore = [{
     img: 'https://i.postimg.cc/JzhZyQFH/Screenshot-2023-12-06-092228.png',
     brandName: 'lacoste',
     description: 'L-GUARD BREAKER CT TEXTILE',
-    price: '1800',
+    price: 1800,
     quantity:1
 
 }
@@ -77,10 +77,21 @@ function displayAddedProducts(value) {
             `
         });
     }else{
-        JSON.parse(localStorage.getItem('Products'))
+    // Else it must display a spinner if there are not products in the localstorage
+    
+            results.innerHTML =
+                `
+            <div class=" justify-content-center d-flex">
+            <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>  
+            </div>
+            `
+
     }
 }
 displayAddedProducts(products)
+
 
 let search = document.getElementById('searchInput')
 function sortItemsByPrice() {
