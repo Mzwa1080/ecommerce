@@ -40,7 +40,7 @@ function displayCheckoutInStorage() {
             <td>R${groupedItemsInTheCheckoutStorage[keyId][0].price}</td>
             <td>${itemQuantity}</td> 
             <td>R${totalPrice}</td>
-            <td>R</td>
+            
 
            
 
