@@ -52,8 +52,7 @@
                 </button>
 
                 <!-- Modal -->
-                <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby=""
-                    aria-hidden="true">
+                <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -62,31 +61,34 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body text-black ">
-                                <form action="">
 
-                                    <div class="mb-3 col-11">
-                                        <label for="exampleInputEmail1" class="form-label">Brand Name</label>
-                                        <input type="text" class="form-control product-name" id="exampleInputEmail1" brand-name aria-describedby="emailHelp">
-                                      </div>
+                                <div class="mb-3 col-11">
+                                    <label for="exampleInputEmail1" class="form-label">Brand Name</label>
+                                    <input type="text" class="form-control product-name" id="exampleInputEmail1"
+                                        brand-name aria-describedby="emailHelp">
+                                </div>
 
-                                      <div class="mb-3 col-11">
-                                        <label for="exampleInputEmail1" class="form-label">Description</label>
-                                        <input type="text" class="form-control product-description" id="exampleInputEmail1" brand-description aria-describedby="emailHelp">
-                                      </div>
-                                      <div class="mb-3 col-11">
-                                        <label for="exampleInputEmail1" class="form-label">Price</label>
-                                        <input type="text" class="form-control product-price" id="exampleInputEmail1" brand-price aria-describedby="emailHelp">
-                                      </div>
-                                      <div class="mb-3 col-11">
-                                        <label for="exampleInputEmail1" class="form-label">Quantity</label>
-                                        <input type="number" class="form-control product-quantity" id="exampleInputEmail1" brand-quantity aria-describedby="emailHelp">
-                                      </div>
-                                      <div class="mb-3 col-11">
-                                        <label for="exampleInputEmail1" class="form-label">Image</label>
-                                        <input type="text" class="form-control product-image" id="exampleInputEmail1" brand-quantity aria-describedby="emailHelp">
-                                      </div>
+                                <div class="mb-3 col-11">
+                                    <label for="exampleInputEmail1" class="form-label">Description</label>
+                                    <input type="text" class="form-control product-description" id="exampleInputEmail1"
+                                        brand-description aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3 col-11">
+                                    <label for="exampleInputEmail1" class="form-label">Price</label>
+                                    <input type="text" class="form-control product-price" id="exampleInputEmail1"
+                                        brand-price aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3 col-11">
+                                    <label for="exampleInputEmail1" class="form-label">Quantity</label>
+                                    <input type="number" class="form-control product-quantity" id="exampleInputEmail1"
+                                        brand-quantity aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3 col-11">
+                                    <label for="exampleInputEmail1" class="form-label">Image</label>
+                                    <input type="text" class="form-control product-image" id="exampleInputEmail1"
+                                        brand-quantity aria-describedby="emailHelp">
+                                </div>
 
-                                </form>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
@@ -97,8 +99,29 @@
                 </div>
             </div>
 
+  
+
             <div class="row">
-                <div class="admin-products-display" admin-data-output></div>
+
+                <table class="table m-0 mx-1 mb-2 mt-3">
+                    <thead>
+                        <tr>
+                            <th scope="col-12">Brand Name</th>
+                            <th scope="col-12">Description</th>
+                            <th scope="col-12">Price</th>
+                            <th scope="col">Quantity</th>
+
+                        </tr>
+                    </thead>
+                    <tbody admin-data-output>
+                    </tbody>
+                    <tr>
+                        <th>Total amount</th>
+                        <th></th>
+                        <th></th>
+                        <th id="totalAmount"></th>
+                    </tr>
+                </table>
             </div>
 
 

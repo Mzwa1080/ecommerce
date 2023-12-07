@@ -40,33 +40,52 @@
 
             
             <div class="container">
-                <table class="table ">
-                  <h3 class="center">Checkout</h3>
-                  <thead>
-                    <!-- <th>#</th> -->
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total</th>
+                <h3 class="text-center">Checkout</h3>
 
 
-                  </thead>
-                  <tbody class="checkout-display">
-                  </tbody>
 
-                  <tfoot>
-                    <tr class="justify-content-between">
-                        <td> <button class="btn btn-danger ms-2" clear-items> Clear All</button></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td display-total> </td>
+            
+                <table class="table m-0 mx-1 mb-2 mt-3 table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Brand Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col" > Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody class="checkout-display">        </tbody>
+                    
+                    <tr>
+                        <th>Total amount</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
 
+                        <th id="totalAmount"></th>
                     </tr>
-                  </tfoot>
+                   
+                    <tr>
+                        <th> 
+                            <button class="btn btn-danger ms-2" clear-items> Clear All</button>
+                            <button class="btn btn-success ms-5">Purchase</button>
+                        </th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        
+                    </tr>
                 </table>
+
               </div>
+
+
+
+
+
+
             
 
     </main>

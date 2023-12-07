@@ -9,22 +9,18 @@ function displayProducts(value) {
     console.log(getStoredProducts);
     // if (value) {
         value.forEach((item) => {
+            
             displayAminProducts.innerHTML +=
                 `
-            <div class="card text-center mt-3" style="width: 18rem;">
-                <img src="${item.img}" class=" text-center card-img-top" alt="...">
-                    <div class="card-body">
-                        
-                        <div class="card-header align-items-center mt-4">${item.brandName.toUpperCase()}</div>
+                <tr>
+                    <td>${item.brandName}</td>
+                    <td>${item.description}</td>
+                    <td>${item.price}</td>
+                    <td>${item.quantity}</td>
 
-                        <p class="card-text">${item.description}</p>
-                        <div class="card-header align-items-center mb-4">R${item.price}</div>
-                        <button class="btn btn-primary" onclick='addItemToCart(${JSON.stringify(item)})'>Add to Cart</button>
+                </tr>
 
-
-                    </div>
-                </div>
-            `
+                `
         });
 
         // console.log(typeof getStoredProducts[0].quantity);
