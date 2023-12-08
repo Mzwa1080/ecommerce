@@ -51,10 +51,16 @@ main {
 
 .about-text {
     margin-top: 2em;
-    color: white;
+    /* color: white; */
+    /* background-color: lightcyan; */
+    align-items: center;
+    width: 80%;
+    /* opacity: .2  ; */
+    background-color: transparent;
+    height: 25rem;
 }
 
-.displayProducts, .admin-products-display {
+.displayProducts {
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-gap: 10px;

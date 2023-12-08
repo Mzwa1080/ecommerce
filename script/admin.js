@@ -10,6 +10,8 @@ function displayProducts(value) {
 
     if (value) {
         value.forEach((item, i) => {
+            // console.log(i);
+            console.log(i, item);
             displayAminProducts.innerHTML +=
                 `
                 <tr>
@@ -113,11 +115,15 @@ function deleteEachItem(index) {
         getStoredProducts.splice(index, 1)
         localStorage.setItem('Products', JSON.stringify(getStoredProducts))
         displayProducts(getStoredProducts)
+        // console.log(index);
         location.reload()
     } catch (e) {
         e.message
     }
 }
+
+
+
 
 function getValuesFromInputAndPushToStorage() {
     let prod_name = document.querySelector('.product-name').value
