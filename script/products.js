@@ -54,7 +54,7 @@ function displayAddedProducts(value) {
    let test = JSON.parse(localStorage.getItem('Products'))
 
 
-   console.log(test);
+//    console.log(test);
     results.innerHTML = "";
     if (value) {
         // forEach(item, i)   - - - the i-> will come in handy for deleting or updating the value
