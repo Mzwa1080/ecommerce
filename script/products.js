@@ -1,8 +1,7 @@
-let products = [];
 let results = document.querySelector('.displayProducts')
 let sortBtn = document.querySelector('[sort-products]')
 
-let shoeStore = [{
+let shoeStore = JSON.parse(localStorage.getItem('Products')) || [{
     id: 1,
     img: 'https://i.postimg.cc/zDx4dPyh/image-2.png',
     brandName: 'nike',
@@ -45,11 +44,11 @@ let shoeStore = [{
 }
 
 ]
-products = [...shoeStore]
+// products = [...shoeStore]
+localStorage.setItem('Products',JSON.stringify(shoeStore) ) 
 function displayAddedProducts(value) {
     // I can loop through shoe store and push to products.
     // From the lessons, spread operator also does the same, what if I assingn the spread to products?
-   localStorage.setItem('Products',JSON.stringify(products) ) || []
    
    let test = JSON.parse(localStorage.getItem('Products'))
 
@@ -90,12 +89,12 @@ function displayAddedProducts(value) {
 
     }
 }
-displayAddedProducts(products)
+displayAddedProducts(shoeStore)
 
 
 let search = document.getElementById('searchInput')
 function sortItemsByPrice() {
-    let items = products.sort((i, ii) => {
+    let items = shoeStore.sort((i, ii) => {
         return ii.price - i.price
     })
     displayAddedProducts(items)
@@ -104,7 +103,7 @@ function sortItemsByPrice() {
 function searchItemByName() {
     let inputSearchValue = search.value;
     if (inputSearchValue) {
-        let filterByName = products.filter((iitem) => {
+        let filterByName = shoeStore.filter((iitem) => {
             return iitem.brandName.toLowerCase().includes(inputSearchValue.toLowerCase())
         })
         displayAddedProducts(filterByName)
@@ -120,7 +119,7 @@ function searchItemByName() {
         }
     } else {
         results.innerHTML = ''
-        displayAddedProducts(products)
+        displayAddedProducts(shoeStore)
     }
 
 }
