@@ -14,11 +14,11 @@ function displayCheckoutInStorage() {
     let totalAmount = [];
 
 
+    let totalPrice = 0;
+    let itemQuantity = 0;
+    let sum = 0
     for (let keyId in groupedItemsInTheCheckoutStorage) {
         // What do you want to do with the ID? - I want to add items by id, one by one in a row!
-
-        let totalPrice = 0;
-        let itemQuantity = 0;
 
     // to get prices and quantity, i need to loop through groupedItems each item and then add together, update to price and quantity
         groupedItemsInTheCheckoutStorage[keyId].forEach(item => {
@@ -30,7 +30,7 @@ function displayCheckoutInStorage() {
         });
         totalAmount.push(totalPrice)
         // console.log(totalAmount);
-        let sum = totalAmount.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+        sum = totalAmount.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
         // console.log(sum.);
         // let finalAmountInTheArr = sum[sum.length -1]
 
@@ -52,11 +52,11 @@ function displayCheckoutInStorage() {
 
         `
 
-        totalAmountDisplay.innerHTML +=
-        `
-        <td>R${sum}</td>
-        `
     }
+    totalAmountDisplay.innerHTML +=
+    `
+    <td>R${sum}</td>
+    `
 
 }
 
