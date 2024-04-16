@@ -36,28 +36,26 @@
     </nav>
 
 
-    <main class="container" id="background">
-
-        <div class="container">
-
-            <div class="row text-center">
-                <h1 class="mt-5">Products</h1>
+  <main class="container" id="background">
+    <div class="container">
+        <div class="row text-center">
+            <h1 class="mt-5">Products</h1>
+        </div>
+        <div class="row justify-content-center"> 
+            <div class="col-12 col-md-4">
+                <button class="btn btn-light w-100 mb-2" type="sort" value="sort" sort-products>Sort</button>
             </div>
-    
-            <div class="row d-flex justify-content-between">
-    
-                <button class="btn btn-light col-2" type="sort" value="sort" sort-products>Sort</button>
-                <input type="search" class="col-2" name="" placeholder="search" id="searchInput">
+            <div class="col-12 col-md-4">
+                <input type="search" class="form-control mb-2" name="" placeholder="Search" id="searchInput">
             </div>
-            
-            <div class="row">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8"> 
                 <div class="displayProducts"></div>
             </div>
-            
-            
         </div>
-
-    </main>
+    </div>
+</main>
 
 
     <footer>
