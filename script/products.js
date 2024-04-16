@@ -3,7 +3,7 @@ let sortBtn = document.querySelector('[sort-products]')
 
 let shoeStore = JSON.parse(localStorage.getItem('Products')) || [{
     id: 1,
-    img: 'https://i.postimg.cc/zDx4dPyh/image-2.png',
+    img: 'https://i.ibb.co/dP3YS9w/image-2.png',
     brandName: 'nike',
     description: 'NIKE AIR FORCE 1 LV8',
     price: 2000,
@@ -11,23 +11,23 @@ let shoeStore = JSON.parse(localStorage.getItem('Products')) || [{
 },
 {
     id: 2,
-    img: 'https://i.postimg.cc/jjp7FYSy/Screenshot-2023-12-06-092205.pngg',
+    img: 'https://i.ibb.co/tYDxx57/adidas.png',
     brandName: 'adidas',
-    description: 'ROADRUNNER  ',
+    description: 'Originals Junior Retropy F2 J Grey/Navy Sneaker  ',
     price: 3000,
     quantity:1
 },
 {
     id: 3,
-    img: 'https://i.postimg.cc/sg0S5hF6/Screenshot-2023-12-06-092049.png',
+    img: 'https://i.ibb.co/CnD6nHK/Yeezy.png',
     brandName: 'Yeezy',
-    description: 'WALK IN THE OCEAN',
+    description: 'Yeezy Boost 700 Wave Runner',
     price: 1800,
     quantity:1
 },
 {
     id: 4,
-    img: 'https://i.postimg.cc/D0Q1TJwy/image-8.png',
+    img: 'https://i.ibb.co/h8ykh2w/image-8.png',
     brandName: 'nike',
     description: 'NIKE  AIR FORCE 1 ‘07 WB',
     price: 2400,
@@ -35,7 +35,7 @@ let shoeStore = JSON.parse(localStorage.getItem('Products')) || [{
 },
 {
     id: 5,
-    img: 'https://i.postimg.cc/JzhZyQFH/Screenshot-2023-12-06-092228.png',
+    img: 'https://i.ibb.co/3FZhG4M/lac.png',
     brandName: 'lacoste',
     description: 'L-GUARD BREAKER CT TEXTILE',
     price: 1800,
